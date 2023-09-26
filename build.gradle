@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClassName = 'org.example.CurrencyExchangeApplication'
+}
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.javamoney/moneta
+    implementation 'org.javamoney:moneta:1.4.2'
+    // https://mvnrepository.com/artifact/com.opencsv/opencsv
+    implementation 'com.opencsv:opencsv:5.8'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'com.github.stefanbirkner:system-lambda:1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
